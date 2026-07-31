@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan & Pay - Rahul Insta Services</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🚀 Rahul <span class="gradient-text">Insta Services</span></div>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <div class="card">
+            <h3 style="margin-top: 0;">💸 Scan & Pay</h3>
+
+            <div class="qr-box">
+                <img id="qrImg" src="" alt="UPI QR Code" style="width: 200px; height: 200px; display: block;">
+            </div>
+
+            <a id="dlBtn" href="" download="RahulInsta_QR.png" class="btn-primary" style="margin: 15px 0 10px 0; background: #e11d48;">⬇️ QR कोड डाउनलोड करें</a>
+
+            <div style="color: #fbbf24; font-size: 13px; font-weight: 600; margin-top: 10px;">
+                भुगतान की प्रतीक्षा हो रही है...
+                <div id="timer" class="timer">04:44</div>
+            </div>
+
+            <div style="text-align: left; background: #120d1d; padding: 12px; border-radius: 12px; font-size: 11px; margin-top: 15px; color: #cbd5e1; border: 1px solid rgba(147, 51, 234, 0.3);">
+                <strong style="color: white;">🛠️ Easy Payment Steps:</strong><br>
+                1. Click "Download QR Code" above.<br>
+                2. Take a screenshot if needed.<br>
+                3. Open your UPI app (Paytm, PhonePe, GPay).<br>
+                4. Tap "Scan QR".<br>
+                5. Scan this QR or upload the screenshot.<br>
+                6. Check amount & complete payment.<br>
+                <div style="color: #34d399; margin-top: 8px; font-weight: bold;">
+                    ✓ After successful payment, confirmation will appear here and your followers will increase automatically.
+                </div>
+            </div>
+
+            <a href="./verify.html" class="btn-primary" style="margin-top: 15px;">I Have Completed Payment</a>
+        </div>
+    </div>
+
+    <script>
+        const UPI_ID = "jairajvanshi@nyes";
+        const price = localStorage.getItem('pack_price') || '90';
+        const user = localStorage.getItem('ig_user') || 'user';
+
+        const uri = `upi://pay?pa=${UPI_ID}&pn=RahulInstaServices&am=${price}&tn=Order_${user}`;
+        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(uri)}`;
+
+        document.getElementById('qrImg').src = qrUrl;
+        document.getElementById('dlBtn').href = qrUrl;
+
+        let time = 284;
+        setInterval(() => {
+            let m = Math.floor(time / 60);
+            let s = time % 60;
+            document.getElementById('timer').textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+            if (time > 0) time--;
+        }, 1000);
+    </script>
+</body>
+</html>

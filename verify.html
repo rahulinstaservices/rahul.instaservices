@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - Rahul Insta Services</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🚀 Rahul <span class="gradient-text">Insta Services</span></div>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <div id="pendingBox" class="card">
+            <div style="font-size: 40px; margin-bottom: 10px;">⏳</div>
+            <h3 style="font-size: 18px; margin: 0 0 10px 0;">Payment confirmation pending</h3>
+            <p style="font-size: 12px; background: rgba(88, 28, 135, 0.4); border: 1px solid rgba(147, 51, 234, 0.4); padding: 12px; border-radius: 12px; color: #e9d5ff;">
+                Once the amount is received, service will start in 10 minutes!
+            </p>
+            <div style="font-size: 11px; color: #a78bfa; margin: 15px 0;">Verifying transaction with UPI gateway...</div>
+
+            <button onclick="alert('Checking status... Still pending.')" class="btn-primary" style="background: #10b981; margin-bottom: 10px;">Check Status Again</button>
+            <button onclick="showFailed()" style="background: none; border: none; color: #f43f5e; font-size: 12px; text-decoration: underline; cursor: pointer;">Simulate Payment Failed</button>
+        </div>
+
+        <div id="failedBox" class="card" style="display: none;">
+            <div style="font-size: 40px; margin-bottom: 10px;">❌</div>
+            <h3 style="font-size: 18px; margin: 0 0 10px 0;">Payment Failed</h3>
+            <p style="font-size: 12px; background: rgba(153, 27, 27, 0.4); border: 1px solid rgba(225, 29, 72, 0.4); padding: 12px; border-radius: 12px; color: #fca5a5;">
+                We could not verify your payment. Please try paying again or scan the QR code properly.
+            </p>
+            <a href="./payment.html" class="btn-primary" style="margin-top: 15px;">Try Payment Again</a>
+        </div>
+    </div>
+
+    <script>
+        function showFailed() {
+            document.getElementById('pendingBox').style.display = 'none';
+            document.getElementById('failedBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

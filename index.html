@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Insta Services - Step 1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🚀 Rahul <span class="gradient-text">Insta Services</span></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h3 style="font-size: 14px; color: #e9d5ff; margin-bottom: 16px;">
+                Enter your Instagram username & mobile number to get started:
+            </h3>
+
+            <form onsubmit="goToPackages(event)">
+                <div class="input-group">
+                    <span class="input-icon">📸</span>
+                    <input type="text" id="username" class="input-field" placeholder="Enter username or link" required oninput="checkInputs()">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-icon">🇮🇳 +91</span>
+                    <input type="tel" id="mobile" class="input-field" style="padding-left: 75px;" placeholder="Enter mobile number" maxlength="10" required oninput="checkInputs()">
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-primary" disabled>Browse Pack</button>
+            </form>
+            <p style="font-size: 11px; color: #a78bfa; margin-top: 10px;">We'll use this to associate your purchase with your account</p>
+        </div>
+    </div>
+
+    <script>
+        function checkInputs() {
+            const user = document.getElementById('username').value.trim();
+            const mob = document.getElementById('mobile').value.trim();
+            const btn = document.getElementById('submitBtn');
+
+            if (user.length >= 2 && /^[0-9]{10}$/.test(mob)) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+
+        function goToPackages(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim().replace('@', '');
+            localStorage.setItem('ig_user', user);
+            window.location.href = './packages.html';
+        }
+    </script>
+</body>
+</html>

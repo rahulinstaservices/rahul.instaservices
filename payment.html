@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Payment - Rahul Insta Services</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">🚀 Rahul <span class="gradient-text">Insta Services</span></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div style="font-size: 12px; color: #a78bfa;">You're purchasing:</div>
+            <h3 id="packTitle" style="font-size: 18px; margin: 5px 0;">5K Followers</h3>
+            <div id="packPrice" class="price-text" style="margin: 5px 0 15px 0;">₹90</div>
+
+            <div style="background: #120d1d; padding: 10px 14px; border-radius: 12px; margin-bottom: 15px; font-size: 12px; color: #fbbf24;">
+                For Instagram account: <strong id="accName">@user</strong>
+            </div>
+
+            <div style="background: rgba(88, 28, 135, 0.4); border: 1px solid rgba(147, 51, 234, 0.4); padding: 10px; border-radius: 10px; font-size: 11px; margin-bottom: 15px;">
+                ⚠️ <strong>Important:</strong> All Views & Likes go to your latest post
+            </div>
+
+            <!-- UPI ID Display Box -->
+            <div style="background: #120d1d; border: 1px solid rgba(168, 85, 247, 0.3); padding: 14px; border-radius: 12px; margin-bottom: 15px; text-align: center;">
+                <div style="font-size: 11px; color: #a78bfa; margin-bottom: 4px; text-transform: uppercase; font-weight: bold;">Pay via UPI ID</div>
+                <div style="font-size: 16px; font-weight: 800; color: #34d399; letter-spacing: 0.5px;">jairajvanshi@nyes</div>
+            </div>
+
+            <!-- Remaining Action Buttons -->
+            <a href="./scan-pay.html" class="payment-btn btn-qr" style="display: block; text-decoration: none; text-align: center; box-sizing: border-box;">🖼️ View QR Code</a>
+
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button onclick="copyUpi()" style="flex: 1; background: #120d1d; border: 1px solid rgba(147, 51, 234, 0.4); color: white; padding: 10px; border-radius: 10px; font-size: 11px; cursor: pointer;">📋 Copy UPI ID</button>
+                <a href="./packages.html" style="flex: 1; background: white; color: #0f0c1b; text-decoration: none; font-weight: bold; text-align: center; padding: 10px; border-radius: 10px; font-size: 11px;">Cancel Payment</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const UPI_ID = "jairajvanshi@nyes";
+        const pack = localStorage.getItem('pack_name') || 'Package';
+        const price = localStorage.getItem('pack_price') || '90';
+        const user = localStorage.getItem('ig_user') || 'user';
+
+        document.getElementById('packTitle').textContent = pack;
+        document.getElementById('packPrice').textContent = '₹' + price;
+        document.getElementById('accName').textContent = '@' + user;
+
+        function copyUpi() {
+            navigator.clipboard.writeText(UPI_ID);
+            alert('UPI ID copied: ' + UPI_ID);
+        }
+    </script>
+</body>
+</html>

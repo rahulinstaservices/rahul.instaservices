@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Groww - Packages</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <div class="header">
+        <div class="logo-box">
+            <div class="logo-icon">⚡</div>
+            <div class="logo-title">Insta Groww</div>
+        </div>
+        <a href="#packages" class="nav-buy-btn">Buy Now</a>
+    </div>
+
+    <div class="container">
+        
+        <!-- Premium Features Card -->
+        <div class="features-card">
+            <div class="features-header">
+                <!-- Authentic Instagram Gradient Camera Icon -->
+                <div class="insta-badge-icon" style="background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Premium Features</h3>
+                    <div style="font-size: 12px; color: #a78bfa; margin-top: 2px;">Everything you need to grow</div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon-circle icon-green">⚡</div>
+                    <div class="feature-title">Instant<br>Delivery</div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-circle icon-blue">👥</div>
+                    <div class="feature-title">Real<br>Accounts</div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-circle icon-purple">🛡️</div>
+                    <div class="feature-title">Drop<br>Protection</div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon-circle icon-pink">🎧</div>
+                    <div class="feature-title">24/7<br>Support</div>
+                </div>
+            </div>
+
+            <div class="offers-bar">
+                <span style="font-size: 13px; color: #cbd5e1; font-weight: 600;">Current offers</span>
+                <span class="offers-badge">3 Active ▼</span>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <div id="packages">
+            <h2 style="font-size: 22px; font-weight: 900; margin: 0 0 6px 0;">Premium Growth Packages</h2>
+            <p style="font-size: 13px; color: #94a3b8; margin: 0 0 24px 0;">
+                Select from our premium services designed to boost your Instagram presence
+            </p>
+        </div>
+
+        <!-- Target Username Banner -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div style="font-size: 18px; font-weight: 800; color: #ffffff; margin-bottom: 12px;">Purchasing For - :</div>
+            
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; background: rgba(168, 85, 247, 0.1);">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="font-size: 20px;">📸</div>
+                    <div id="targetUser" style="font-size: 15px; font-weight: 800; color: #f472b6;">@username</div>
+                </div>
+                <a href="./index.html" style="font-size: 12px; color: #c084fc; text-decoration: underline; font-weight: 600;">Change</a>
+            </div>
+        </div>
+
+        <!-- Growth Packages -->
+
+        <!-- Pack 1 -->
+        <div class="card" style="position: relative;">
+            <span class="price-badge">POPULAR</span>
+            <h4 style="margin: 0; font-size: 17px;">5K Followers + Likes + Views</h4>
+            <p style="font-size: 12px; color: #a78bfa; margin: 6px 0;">5K Followers • 10K Likes • 70K Views</p>
+            <div class="price-text">₹90</div>
+            <button onclick="selectPack('5K Followers + Likes + Views', 90)" class="btn-primary">Get Now ➔</button>
+        </div>
+
+        <!-- Pack 2 -->
+        <div class="card" style="position: relative;">
+            <span class="price-badge">POPULAR</span>
+            <h4 style="margin: 0; font-size: 17px;">10K Followers + Likes + Views</h4>
+            <p style="font-size: 12px; color: #a78bfa; margin: 6px 0;">10K Followers • 10K Likes • 70K Views</p>
+            <div class="price-text">₹120</div>
+            <button onclick="selectPack('10K Followers + Likes + Views', 120)" class="btn-primary">Get Now ➔</button>
+        </div>
+
+        <!-- Pack 3 -->
+        <div class="card">
+            <h4 style="margin: 0; font-size: 17px;">50K Followers + Likes + Views</h4>
+            <p style="font-size: 12px; color: #a78bfa; margin: 6px 0;">50K Followers • 10K Likes • 70K Views</p>
+            <div class="price-text">₹150</div>
+            <button onclick="selectPack('50K Followers + Likes + Views', 150)" class="btn-primary">Get Now ➔</button>
+        </div>
+
+        <!-- Pack 4 -->
+        <div class="card">
+            <h4 style="margin: 0; font-size: 17px;">100K Followers + Likes + Views</h4>
+            <p style="font-size: 12px; color: #a78bfa; margin: 6px 0;">100K Followers • 10K Likes • 70K Views</p>
+            <div class="price-text">₹200</div>
+            <button onclick="selectPack('100K Followers + Likes + Views', 200)" class="btn-primary">Get Now ➔</button>
+        </div>
+
+        <!-- Pack 5 -->
+        <div class="card" style="position: relative;">
+            <span class="price-badge">BEST VALUE</span>
+            <h4 style="margin: 0; font-size: 17px;">Blue Tick + 100K Followers</h4>
+            <p style="font-size: 12px; color: #a78bfa; margin: 6px 0;">Lifetime Blue Tick 💙 • 100K Followers</p>
+            <div class="price-text">₹249</div>
+            <button onclick="selectPack('Blue Tick + 100K Followers', 249)" class="btn-primary">Get Now ➔</button>
+        </div>
+
+    </div>
+
+    <script>
+        const user = localStorage.getItem('ig_user') || 'User';
+        document.getElementById('targetUser').textContent = '@' + user;
+
+        function selectPack(name, price) {
+            localStorage.setItem('pack_name', name);
+            localStorage.setItem('pack_price', price);
+            window.location.href = './payment.html';
+        }
+    </script>
+</body>
+</html>
